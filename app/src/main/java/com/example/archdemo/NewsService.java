@@ -1,6 +1,8 @@
 package com.example.archdemo;
 
-import org.json.JSONObject;
+import android.arch.lifecycle.LiveData;
+
+import com.example.library.Resource;
 
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -17,6 +19,6 @@ public interface NewsService {
      * 获取资讯新闻列表
      */
     @GET("noa/news/news_list")
-    Observable<JSONObject> getNews(@Query("news_type") int type, @Query("page_size") int pageSize, @Query("page") int page);
+    Observable<LiveData<Resource<NewsListEntity>>> getNews(@Query("news_type") int type, @Query("page_size") int pageSize, @Query("page") int page);
 
 }
