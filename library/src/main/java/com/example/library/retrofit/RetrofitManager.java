@@ -34,12 +34,15 @@ public class RetrofitManager {
         initRetrofit(context);
     }
 
-    public static RetrofitManager getInstace(Context context) {
+    public static void init(Context context) {
         if (sInstace == null) {
             synchronized (RetrofitManager.class) {
                 sInstace = new RetrofitManager(context.getApplicationContext());
             }
         }
+    }
+
+    public static RetrofitManager getInstace() {
         return sInstace;
     }
 
