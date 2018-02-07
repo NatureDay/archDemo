@@ -1,4 +1,8 @@
-package com.example.archdemo;
+package com.example.archdemo.db.entity;
+
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -7,11 +11,14 @@ import com.google.gson.annotations.SerializedName;
  * Author: daiyuanhong
  * Time:   2017/9/25 13:51
  */
+@Entity(tableName = "newsTypes")
 public class NewsTypeEntity {
 
+    @PrimaryKey
     @SerializedName("news_type")
     private int newsType;
 
+    @ColumnInfo(name = "typeName")
     @SerializedName("type_name")
     private String typeName;
 

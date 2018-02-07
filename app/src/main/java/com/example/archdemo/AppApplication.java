@@ -15,5 +15,8 @@ public class AppApplication extends Application {
     public void onCreate() {
         super.onCreate();
         RetrofitManager.init(this);
+
+//        final DatabaseCreator databaseCreator = DatabaseCreator.getInstance(this);
+//        databaseCreator.createDb(this);
     }
 }

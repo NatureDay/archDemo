@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.archdemo.db.entity.NewsTypeEntity;
 import com.example.library.Resource;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        DemoViewHolder.Factory factory = new DemoViewHolder.Factory(getApplication(), new NewsRepository());
+        DemoViewHolder.Factory factory = new DemoViewHolder.Factory(getApplication(), new NewsRepository(this));
         DemoViewHolder viewHolder = ViewModelProviders.of(this, factory).get(DemoViewHolder.class);
         subscribeUi(viewHolder);
     }

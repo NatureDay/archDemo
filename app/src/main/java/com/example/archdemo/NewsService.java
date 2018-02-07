@@ -2,6 +2,7 @@ package com.example.archdemo;
 
 import android.arch.lifecycle.LiveData;
 
+import com.example.archdemo.db.entity.NewsTypeEntity;
 import com.example.library.ApiResponse;
 
 import java.util.List;
